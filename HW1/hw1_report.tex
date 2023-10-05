@@ -1,0 +1,61 @@
+\documentclass[12pt, a4paper]{article}
+
+\title{\textsc{Machine Learning} Assignment 1 Report}
+\author{110062219}
+\date{\today}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage[margin=2cm]{geometry}
+
+\lstset{
+	breaklines=true,
+	basicstyle=\ttfamily,
+}
+
+\definecolor{nthu}{HTML}{7F1084}
+
+% \renewcommand{\ttdefault}{pcr}
+
+\begin{document}
+
+\maketitle
+
+\section{Regression Equation for Basic Part}
+
+I have adopted the simple, straightforward linear regression model:
+
+$$\mathbf{y}=\Phi(x)\mathbf{w}$$
+
+\section{Variables for Advanced Part}
+
+First, the subjects were grouped by their IDs and the column of \texttt{chart time} was dropped. Then I performed the multiple regression based on the remaining 4 columns: \texttt{temperature}, \texttt{heart rate}, \texttt{respiratory rate} \& \texttt{O\textsubscript{2} saturation}.
+
+\section{Difficulty Encountered}
+
+\begin{enumerate}
+\item Initially, I didn't preprocess the data of basic part. As a consequence, the validation loss was unstable and varied, even exceeding 10 sometimes.
+\item The result of gradient descent was too far from the one of matrix inversion.
+\item There are quite plenty of missing data in the training of advanced part.
+\end{enumerate}
+
+\section{Solutions \& Reflections}
+
+\begin{enumerate}
+\item I used to try higher-degree polynomial regression but in vain. After I filtered out the outliers that are out of 3 times the standard deviation, the results looked well.
+\item In the beginning, $\mathbf{w}$ was initialised completely randomly and it was hard to tune the hyper-parameter \textit{learning rate}. Therefore, I cheated a bit and initialised $\mathbf{w}$ with the approximate values obtained from matrix inversion. I believe that for real-life challenges, it would be a good idea that we first do matrix inversion of a small batch to initialise $\mathbf{w}$.
+\item I learned the \textbf{``hot-deck imputation''} which is suitable for time-series data and then put it into practice.
+\end{enumerate}
+
+Overall, I built the gradient descent model from scratch by myself without any specific package in this assignment, which was really intriguing. 
+
+%\section*{Acknowledgements}
+%
+%I thank to \textsf{National Center for High-performance Computing} \textit{(NCHC)} for providing computational and storage resources.
+
+\end{document}
