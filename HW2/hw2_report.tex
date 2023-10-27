@@ -1,0 +1,51 @@
+\documentclass[12pt, a4paper]{article}
+
+\title{\textsc{Machine Learning} Assignment 1 Report}
+\author{110062219}
+\date{\today}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{listings}
+%\usepackage[margin=2cm]{geometry}
+
+\lstset{
+	breaklines=true,
+	basicstyle=\ttfamily,
+}
+
+\definecolor{nthu}{HTML}{7F1084}
+
+% \renewcommand{\ttdefault}{pcr}
+
+\begin{document}
+
+\maketitle
+
+\section{Why Log Probability is Used in the Implementation of Bayes Classifier}
+
+\textbf{Log probability} is common in computer science. It improves \textit{numerical stability}, lest when directly computing the product of probabilities, the value may become too small and thus \textit{underflow}.
+
+\section{Differences Between Na\"{i}ve Bayes Classifier and Gaussian Na\"{i}ve Bayes Classifier}
+
+Ordinary Na\"{i}ve Bayes Classifier is suitable for discrete, categorical features, whereas Gaussian Na\"{i}ve Bayes Classifier is apt at continuous, numerical data, based on the supposition that data are under normal distribution.
+
+\section{Difficulty Encountered}
+
+In the beginning, I was a bit anxious about Bayes Classifier since I haven't taken the \textsc{Probability} course yet.
+
+\section{Solutions \& Reflections}
+
+Thanks to the template provided by TA, I was able to fill in the TODO blanks and successfully complete the Na\"{i}ve Bayes Classifiers without taking so long as I previously presumed.
+
+Meanwhile, I have gained more concrete comprehension of Na\"{i}ve Bayes Classifiers and their theories during the implementation.
+
+%\section*{Acknowledgements}
+%
+%I thank to \textsf{National Center for High-performance Computing} \textit{(NCHC)} for providing computational and storage resources.
+
+\end{document}
