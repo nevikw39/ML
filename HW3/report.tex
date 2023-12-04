@@ -1,0 +1,53 @@
+\documentclass[12pt, a4paper]{article}
+
+\title{\textsc{Machine Learning} Assignment 3 Report}
+\author{110062219}
+\date{\today}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{listings}
+%\usepackage[margin=2cm]{geometry}
+
+\lstset{
+	breaklines=true,
+	basicstyle=\ttfamily,
+}
+
+\definecolor{nthu}{HTML}{7F1084}
+
+% \renewcommand{\ttdefault}{pcr}
+
+\begin{document}
+
+\maketitle
+
+\section{Difficulty Encountered}
+
+In the beginning, I implemented focal loss function using just one single line of Python code and got passed the sample test case. Nonetheless, when I started training the model, some runtime error occurred. After some debugging, I correct my implementation.
+
+\section{Structure of Classifier}
+
+\subsection{Basic}
+
+6 hidden layers. The first 5 ones consist of 10 neurons with ReLU activation function, and the last one are 2 neurons with softmax.
+
+\subsection{Advanced}
+
+3 hidden layers comprising 256, 100 \& 10 neurons, respectively. The first 2 ones use ReLU as activation function, whereas the last one adopt softmax.
+
+\section{Effort to Improve Models}
+
+Initially, I picked a learning rate that was too slow to converge. Moreover, I had too many layers and too many neurons in each layer for both basic and advanced part, which might led to overfitting.
+
+Last but not least, after applying random mini batch to advanced part, notable improvement was achieved.
+
+%\section*{Acknowledgements}
+%
+%I thank to \textsf{National Center for High-performance Computing} \textit{(NCHC)} for providing computational and storage resources.
+
+\end{document}
